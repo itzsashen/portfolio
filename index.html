@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sashen's Space</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+        crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+</head>
+
+<body>
+    <!-- SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="home" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M4 19v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-3q-.425 0-.712-.288T14 20v-5q0-.425-.288-.712T13 14h-2q-.425 0-.712.288T10 15v5q0 .425-.288.713T9 21H6q-.825 0-1.412-.587T4 19" />
+        </symbol>
+        <symbol id="person" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 6v-.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2v.8q0 .825-.587 1.413T18 20H6q-.825 0-1.412-.587T4 18" />
+        </symbol>
+        <symbol id="layout" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M8 3a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm0 9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3zm10-9a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z" />
+        </symbol>
+        <symbol id="contact" viewBox="0 0 14 14">
+            <path fill="currentColor" fill-rule="evenodd"
+                d="M11.132.063H3.046A2.18 2.18 0 0 0 .869 2.18v9.574a2.177 2.177 0 0 0 2.177 2.175h9.037a.75.75 0 0 0 0-1.5h-.2V10.9a1.7 1.7 0 0 0 .95-1.527v-7.61A1.7 1.7 0 0 0 11.132.062ZM2.567 12.23a.677.677 0 0 1 .479-1.155h7.336v1.354H3.046a.68.68 0 0 1-.48-.199Zm6.01-3.906a1.7 1.7 0 0 1-1.053-.089a9.55 9.55 0 0 1-3.278-3.278A1.71 1.71 0 0 1 4.708 3l.246-.246a.533.533 0 0 1 .732-.096l.796.796a.533.533 0 0 1-.096.732a.533.533 0 0 0-.095.732L7.563 6.19a.533.533 0 0 0 .732-.095A.533.533 0 0 1 9.027 6l.796.795a.533.533 0 0 1-.096.732l-.246.247a1.7 1.7 0 0 1-.903.55Z"
+                clip-rule="evenodd" />
+        </symbol>
+        <symbol id="testimonial" viewBox="0 0 20 20">
+            <path fill="currentColor"
+                d="M4 3h12c.55 0 1.02.2 1.41.59S18 4.45 18 5v7c0 .55-.2 1.02-.59 1.41S16.55 14 16 14h-1l-5 5v-5H4c-.55 0-1.02-.2-1.41-.59S2 12.55 2 12V5c0-.55.2-1.02.59-1.41S3.45 3 4 3m11 2H4v1h11zm1 3H4v1h12zm-3 3H4v1h9z" />
+        </symbol>
+        <symbol id="arrow-right" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2.5"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </symbol>
+        <symbol id="github" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
+        </symbol>
+        <symbol id="linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M17.5 8.999a5.4 5.4 0 0 0-2.565.645A1 1 0 0 0 14 8.999h-4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-5.5a1 1 0 1 1 2 0v5.5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-7.5a5.507 5.507 0 0 0-5.5-5.5m3.5 12h-2v-4.5a3 3 0 1 0-6 0v4.5h-2v-10h2v.703a1 1 0 0 0 1.781.625A3.483 3.483 0 0 1 21 14.5Zm-14-12H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-12a1 1 0 0 0-1-1m-1 12H4v-10h2ZM5.015 1.542a3.233 3.233 0 1 0-.057 6.457h.028a3.233 3.233 0 1 0 .029-6.457m-.029 4.457h-.028a1.222 1.222 0 0 1-1.37-1.228c0-.747.56-1.229 1.427-1.229A1.234 1.234 0 0 1 6.41 4.771c0 .746-.56 1.228-1.425 1.228" />
+        </symbol>
+        <symbol id="mail" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z" />
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M22 12A10 10 0 1 0 12 22V14.5h-2V12h2v-1.5c0-2 1.2-3 3-3 .9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.5-1.3 1.2V12h2.5l-.4 2.5H15.5V22A10 10 0 0 0 22 12z"/>
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </symbol>
+        <symbol id="x" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17.53 3H21l-7.19 8.21L22 21h-6.5l-5.2-6.3L4 21H1l7.64-8.73L2 3h6.5l4.7 5.7zm-1.1 15h2.1l-5.7-6.9-1.5 1.7zM6.4 5l5.6 6.7 1.5-1.7L8.5 5z"/>
+        </symbol>
+        <symbol id="download" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z" />
+        </symbol>
+    </svg>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#home">
+                <span style="font-family: 'Bebas Neue', cursive; font-size: 1.8rem; color: var(--primary-color);">SASHEN</span>
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end bg-dark" tabindex="-1"
+                id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-white">Menu</h5>
+                    <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="position-relative">
+        <div class="floating-elements">
+            <div class="floating-item">🔐</div>
+            <div class="floating-item">🤖</div>
+            <div class="floating-item">📈</div>
+        </div>
+
+        <div class="container-fluid px-4" style="min-height: 125vh; display: flex; align-items: center;">
+            <div class="row align-items-center w-100">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title">
+                        Hi, I'm Sashen
+                    </h1>
+                    
+                    <h2 class="hero-subtitle">
+                        Cybersecurity & AI Enthusiast | Trader | Tech Optimizer
+                    </h2>
+                    
+                    <p class="hero-description">
+                        17-year-old passionate about <strong>cybersecurity, artificial intelligence, and crypto trading</strong>. 
+                        From Sri Lanka, I’m shaping the future with code. I am securing the digital world and unlocking AI’s endless possibilities. I chase freedom and lead with vision.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">17</span>
+                            <span class="stat-label">Years Old</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2027</span>
+                            <span class="stat-label">A-Level</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Core Subjects</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center mt-4">
+                        <a href="#projects" class="btn-primary-custom">
+                            <span>Explore My Work</span>
+                            <svg width="20" height="20">
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn-secondary-custom">
+                            <svg width="20" height="20">
+                                <use xlink:href="#mail"></use>
+                            </svg>
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+
+                    <div class="tech-stack">
+                        <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.9rem;">
+                            <strong>Tech Stack & Interests:</strong>
+                        </p>
+                        <div>
+                            <span class="tech-item">WEB Development</span>
+                            <span class="tech-item">Cybersecurity</span>
+                            <span class="tech-item">Crypto Trading</span><br>
+                            <span class="tech-item">AI & ML</span>
+                            <span class="tech-item">Aviation</span>
+                            <span class="tech-item">Astronomy</span>
+                            <span class="tech-item">Content Creation</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="mailto:sashen425@gmail.com" class="social-link" title="Email">
+                            <svg width="24" height="24">
+                                <use xlink:href="#mail"></use>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/imsashen" class="social-link" title="Facebook">
+                            <svg width="24" height="24">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/itzsashen" class="social-link" title="Instagram">
+                            <svg width="24" height="24">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/SashenKumara" class="social-link" title="X (Twitter)">
+                            <svg width="24" height="24">
+                                <use xlink:href="#x"></use>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" class="social-link" title="LinkedIn">
+                            <svg width="24" height="24">
+                                <use xlink:href="#linkedin"></use>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Knight-NEO" class="social-link" title="GitHub">
+                            <svg width="24" height="24">
+                                <use xlink:href="#github"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hero-image">
+                    <div class="hero-avatar">
+                    </div>
+                        <div class="quick-highlights">
+                        <h4 style="color: var(--primary-color); margin-bottom: 20px; text-align: center;">
+                            <b>🎯 Quick Highlights</b>
+                        </h4>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">👨‍💻</span>
+                            <span>Tech Enthusiast</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🤖</span>
+                            <span>AI & Machine Learning Explorer</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📈</span>
+                            <span>Crypto Trading Strategist</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🎬</span>
+                            <span>AI Content Creator</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🌌</span>
+                            <span>Astronomy & Aviation Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg width="24" height="24" fill="currentColor">
+                <path d="M12 2l-8 8h6v8h4v-8h6z" transform="rotate(180 12 12)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section Preview -->
+    <section id="about" class="py-5" style="background: rgba(26, 26, 26, 0.5); backdrop-filter: blur(10px);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 style="font-family: 'Bebas Neue', cursive; font-size: 3rem; color: var(--primary-color);">
+                        About Me
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        Deep dive into my journey, skills, and vision for the future
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="section-card">
+                        <h3 style="background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px;">My Story</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">
+                            I’m a 17-year-old from Sri Lanka with a strong passion for tech and innovation. While I study A-Levels in Mathematics, Physics, Combined Maths, and ICT, I’m preparing for a future that combines <br> <strong style="color: var(--primary-color);">Cybersecurity and AI</strong>.
+                        </p>
+                        <p style="color: var(--text-muted); line-height: 1.8;">
+                            My journey began with a curiosity about how things work. It evolved into coding web devepments and now includes <strong style="color: var(--secondary-color);">Ethical Hacking</strong> and <strong style="color: var(--accent-color);">AI-generated Contents</strong>. I believe in learning by doing. Every project I build teaches me something new and improves my skills.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="section-card">
+                        <h3 style="background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px;">My Vision</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">
+                            I’m pursuing financial independence by mastering technology. I aim not just to learn, but to take charge in cybersecurity and AI engineering. At the same time, I’m working on creating sustainable income through smart trading strategies.
+                        </p>
+                        <div style="margin-top: 25px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 22.5px;">
+                                <span style="color: var(--primary-color); margin-right: 15px;">🎯</span>
+                                <span style="color: var(--text-muted);">Become a Cybersecurity Professional</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 22.5px;">
+                                <span style="color: var(--secondary-color); margin-right: 15px;">🤖</span>
+                                <span style="color: var(--text-muted);">AI Engineer & Researcher</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <span style="color: var(--accent-color); margin-right: 15px;">💰</span>
+                                <span style="color: var(--text-muted);">Achieve Financial Independence</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 style="font-family: 'Bebas Neue', cursive; font-size: 3rem; color: var(--primary-color);">
+                        Skills & Expertise
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">
+                        Building a diverse skill set to shape the future of technology
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div style="font-size: 3rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));">💻</div>
+                        <h4><b><i>Development</i></b></h4>
+                        <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+                            <li style="margin-bottom: 8px;">Generative AI</li>
+                            <li style="margin-bottom: 8px;">HTML, CSS, JavaScript</li>
+                            <li style="margin-bottom: 8px;">Flutter, Firebase</li>
+                            <li>Vibe Coding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div style="font-size: 3rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.5));">🔐</div>
+                        <h4><b><i>Cybersecurity</i></b></h4>
+                        <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+                            <li style="margin-bottom: 8px;">Ethical Hacking Basics</li>
+                            <li style="margin-bottom: 8px;">Security Tools</li>
+                            <li style="margin-bottom: 8px;">Network Security</li>
+                            <li>System Hardening</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div style="font-size: 3rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5));">🤖</div>
+                        <h4><b><i>AI & ML</i></b></h4>
+                        <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+                            <li style="margin-bottom: 8px;">AI Tools & Apps</li>
+                            <li style="margin-bottom: 8px;">Creative AI Projects</li>
+                            <li style="margin-bottom: 8px;">ML Research</li>
+                            <li>Future Tech Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="skill-card">
+                        <div style="font-size: 3rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));">📈</div>
+                        <h4><b><i>Trading</i></b></h4>
+                        <ul style="list-style: none; padding: 0; color: var(--text-muted);">
+                            <li style="margin-bottom: 8px;">EWC, SMC, ICT</li>
+                            <li style="margin-bottom: 8px;">Scalp & Swing Trading</li>
+                            <li style="margin-bottom: 8px;">Technical Analysis</li>
+                            <li>Market Psychology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5" style="background: rgba(26, 26, 26, 0.5); backdrop-filter: blur(10px);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 style="font-family: 'Bebas Neue', cursive; font-size: 3rem; color: var(--primary-color);">
+                        Featured Projects
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">
+                        Building, creating, and innovating across different domains
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div style="font-size: 3rem; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));">🌐</div>
+                        <h4>Interactive Web Pages</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 20px;">
+                            Interactive browser-based game built with HTML, CSS, and JavaScript. 
+                            Features game physics, collision detection, and smooth animations.
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">API Integrations</span>
+                            <span class="tech-tag">UX/UI Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div style="font-size: 3rem; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.5));">🎬</div>
+                        <h4>AI-generated Contents</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 20px;">
+                            AI-generated contents created using Pika Labs, CapCut, and ElevenLabs. 
+                            Explores creative applications of AI in storytelling and filmmaking.
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="tech-tag">AI Generation</span>
+                            <span class="tech-tag">Vibe Coding</span>
+                            <span class="tech-tag">Video Editing</span>
+                            <span class="tech-tag">Creative</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div style="font-size: 3rem; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5));">⚙️</div>
+                        <h4>System Optimization Suite</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 20px;">
+                            Custom Windows optimization scripts and Linux tweaks for peak performance. 
+                            Plus personalized device configurations and performance tuning.
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="tech-tag">System Tuning</span>
+                            <span class="tech-tag">Performance</span>
+                            <span class="tech-tag">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#contact" class="btn-primary-custom">
+                    <span>View All Projects</span>
+                    <svg width="20" height="20">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 style="font-family: 'Bebas Neue', cursive; font-size: 3rem; color: var(--primary-color);">
+                        Let's Connect
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">
+                        Ready to discuss cybersecurity, AI, trading, or just geek out about tech? 🚀
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 mb-4 text-center">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <svg width="30" height="30" fill="#000">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                                <h4>Email</h4>
+                                <p style="color: var(--text-muted);">
+                                    <a href="mailto:sashen425@gmail.com" style="color: var(--text-muted); text-decoration: none;">
+                                        sashen@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4 text-center">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <svg width="30" height="30" fill="#000">
+                                        <use xlink:href="#github"></use>
+                                    </svg>
+                                </div>
+                                <h4>GitHub</h4>
+                                <p style="color: var(--text-muted);">
+                                    <a href="https://github.com/Knight-NEO" style="color: var(--text-muted); text-decoration: none;">
+                                        github.com/sashen
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4 text-center">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <svg width="30" height="30" fill="#000">
+                                        <use xlink:href="#linkedin"></use>
+                                    </svg>
+                                </div>
+                                <h4>LinkedIn</h4>
+                                <p style="color: var(--text-muted);">
+                                    <a href="https://linkedin.com/in/" style="color: var(--text-muted); text-decoration: none;">
+                                        linkedin.com/in/sashen
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <div class="section-card">
+                            <h4 style="background: var(--neon-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px;">Current Focus Areas</h4>
+                            <p style="color: var(--text-muted); line-height: 1.8;">
+                                🎓 <strong style="color: var(--primary-color);">Studying:</strong> A-Level Mathematics Stream<br>
+                                🔐 <strong style="color: var(--secondary-color);">Learning:</strong> Advanced Cybersecurity & Ethical Hacking<br>
+                                🤖 <strong style="color: var(--accent-color);">Exploring:</strong> AI Applications & Machine Learning<br>
+                                📈 <strong style="color: var(--primary-color);">Trading:</strong> Scalp, Swing & Intra-Day trading on MEXC, Binance, Bybit<br>
+                                🌟 <strong style="color: var(--secondary-color);">Goal:</strong> Financial Independence through Tech Mastery
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="navbar-side d-none d-lg-block">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html" title="Home">
+                    <svg width="24" height="24">
+                        <use xlink:href="#home"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about" title="About">
+                    <svg width="24" height="24">
+                        <use xlink:href="#person"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills" title="Skills">
+                    <svg width="24" height="24">
+                        <use xlink:href="#layout"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#projects" title="Projects">
+                    <svg width="24" height="24">
+                        <use xlink:href="#layout"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact" title="Contact">
+                    <svg width="24" height="24">
+                        <use xlink:href="#contact"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background: rgba(26, 26, 46, 0.9); border-top: 1px solid rgba(0, 217, 255, 0.3);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p style="color: var(--text-muted); margin: 0;">
+                        © 2025 <span style="color: var(--primary-color);">Sashen</span> | Building the Future with Code & Curiosity ✨
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p style="color: var(--text-muted); margin: 0;">
+                        From <span style="color: var(--secondary-color);">Sri Lanka</span> 🇱🇰 with big dreams 🚀
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 500);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Navbar background on scroll
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(26, 26, 46, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 217, 255, 0.2)';
+            } else {
+                navbar.style.background = 'rgba(26, 26, 46, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 217, 255, 0.1)';
+            }
+        });
+
+        // Add loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.hero-content > *');
+            elements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+    </script>
+</body>
+</html>
