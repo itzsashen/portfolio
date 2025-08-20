@@ -397,6 +397,11 @@ body {
         justify-content: center;
     }
 
+    .hero-content {
+        margin-top: 100px;
+    }
+    
+
     .hero-avatar {
         width: 200px;
         height: 200px;
@@ -557,4 +562,5 @@ h2 {
     background: rgba(128, 0, 255, 0.1);
     color: var(--accent-color);
     border-color: rgba(128, 0, 255, 0.3);
+
 }
